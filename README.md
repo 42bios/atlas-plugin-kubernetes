@@ -4,7 +4,7 @@ Independent, read-only inventory connector for Atlas. Clusters, namespaces, node
 
 ## Status
 
-Initial extracted package, version 1.0.0. This repository is currently private; Atlas’s public repository downloader cannot install it until private GitHub access is implemented or repository visibility changes. The collector implementation already exists in Atlas. Repository installation is separate from migrating an existing bundled connector; do not create a duplicate scheduled collector for the same system.
+Initial extracted package, version 1.0.0. This repository is public and can be downloaded anonymously through Atlas’s repository installer. The collector implementation already exists in Atlas. Repository installation is separate from migrating an existing bundled connector; do not create a duplicate scheduled collector for the same system.
 
 ## Install
 
