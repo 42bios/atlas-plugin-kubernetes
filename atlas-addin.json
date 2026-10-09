@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "connectorApi": 1,
+  "id": "kubernetes-connector",
+  "name": "Kubernetes connector",
+  "description": "Independent kubernetes inventory collector for Atlas.",
+  "version": "1.0.0",
+  "runtime": "python",
+  "entrypoint": "connector.py",
+  "credentialRequired": true,
+  "configuration": [
+    {
+      "key": "upstreamUrl",
+      "label": "Kubernetes API URL",
+      "type": "url",
+      "required": true
+    },
+    {
+      "key": "clusterName",
+      "label": "Cluster name",
+      "type": "text",
+      "default": "Kubernetes"
+    }
+  ],
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "e3e49d24932608c2139cbda8c00407ccfc285371ea2d0ab9e5cbb98dfa3c83be"
+    },
+    {
+      "path": "common/runtime.py",
+      "sha256": "00ddc5770986e5417c4c028d976b05372b353cf1f74410468f0479ee44023ec2"
+    },
+    {
+      "path": "connector.py",
+      "sha256": "7e09915d57b1da2d0687222541032453cbe2d3440e350dfde1972a4b5be2d803"
+    },
+    {
+      "path": "worker/collector.py",
+      "sha256": "fa2af6b5b9eabce59c1e6cc1ba185d4f3674b2041d25ef6594cdda777bdf4006"
+    },
+    {
+      "path": "worker/runtime.py",
+      "sha256": "5efa16e7a2962e6451ec495de92def998b9ffc260968caf94f0c90aac095de9b"
+    }
+  ]
+}
