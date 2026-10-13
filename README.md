@@ -29,3 +29,7 @@ Repository code runs with Atlas application permissions. Checksums verify the do
 ## Development
 
 Run `python -m unittest discover -s tests` before publishing. After modifying declared package files, run `python tools/update_manifest.py` and bump `version` in `atlas-addin.json`. Commit all checksum changes together. CI checks file integrity, Python syntax and collector fixtures without contacting a live system.
+
+## Compatibility regression checks
+
+Run `python3 -m unittest discover -s tests` before release. Fixtures cover upstream variations, unavailable queries and data minimization; they are not proof of a successful connection to every upstream release. The Kubernetes and Proxmox adapters remain fixture-validated until tested against a real installation.

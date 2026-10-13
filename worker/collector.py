@@ -11,6 +11,7 @@ def collect(get, source, cluster_name='Kubernetes'):
         items, cursor, seen = [], '', set()
         while True:
             page = get(path+'?'+urlencode({'limit':500, **({'continue':cursor} if cursor else {})}))
+            if not isinstance(page,dict) or not isinstance(page.get('items'),list):raise ValueError('Invalid Kubernetes resource page')
             items.extend(page['items'])
             if len(items) > 20000:
                 raise ValueError('Resource inventory exceeds limit')
@@ -43,11 +44,11 @@ def collect(get, source, cluster_name='Kubernetes'):
             if kind == 'Node': nodes[m['name']] = uid
             if kind == 'Service': service_names[(ns,m['name'])] = uid
     records = {r['id']:r for r in services}
-    links = []
+    links = [];link_ids=set()
     def link(a,b,kind):
         if a in records and b in records and a != b:
             lid=a+'-'+kind+'-'+b
-            if not any(l['id']==lid for l in links): links.append(dict(id=lid, source=a, target=b, type=kind))
+            if lid not in link_ids:link_ids.add(lid);links.append(dict(id=lid, source=a, target=b, type=kind))
     for kind, items in resources.items():
         for item in items:
             m, spec = item['metadata'], item.get('spec', {})
