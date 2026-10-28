@@ -4,7 +4,7 @@
   "id": "kubernetes-connector",
   "name": "Kubernetes connector",
   "description": "Independent kubernetes inventory collector for Atlas.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "runtime": "python",
   "entrypoint": "connector.py",
   "credentialRequired": true,
@@ -25,7 +25,7 @@
   "files": [
     {
       "path": "README.md",
-      "sha256": "6bce1da346b79fd4e40a812c7de1ecf2cef71919484bf576ce870ce7114832fd"
+      "sha256": "ebe3023876d3560b9b543f360ffbe18660abc29d5cd5fa50c443a6ab942cfb18"
     },
     {
       "path": "common/runtime.py",
