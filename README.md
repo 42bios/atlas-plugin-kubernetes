@@ -43,3 +43,7 @@ Run `python3 -m unittest discover -s tests` before release. Fixtures cover upstr
 Fixture validated. A live Kubernetes cluster is not available in the current test environment; live-cluster validation remains pending.
 
 This documentation release changes setup instructions and runtime descriptions. Collector behavior is unchanged. Review Marketplace updates explicitly; applying an update does not require re-entering saved credentials. Keep credentials out of repositories, issues and screenshots.
+
+## License
+
+Copyright © 2026 42bios. Licensed under **GPL-3.0-only**. See [LICENSE.txt](LICENSE.txt). This applies to this connector’s code and documentation; upstream products and trademarks retain their own rights.
